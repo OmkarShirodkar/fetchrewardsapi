@@ -16,7 +16,8 @@ public class PyramidService {
      * @return List
      */
     public static List<Integer> countOccurrencesOfUniqueCharacters(String testString) {
-        return testString.chars()
+        return testString.toLowerCase()
+                .chars()
                 .distinct()
                 .map(ch -> StringUtils.countMatches(testString, String.valueOf((char) ch)))
                 .sorted()
